@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Health Sync Privacy Policy</title>
+<meta name="description" content="How Health Sync handles your Google Health data and the other data it uses. Everything stays on your own computer.">
+<style>
+  :root {
+    --ink: #202124; --muted: #5F6368; --line: #E3E5E8; --soft: #F1F3F4;
+    --bg: #F8F9FA; --card: #FFFFFF; --accent: #3B6FD8; --accent-soft: #E8F0FE;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E8EAED; --muted: #9AA0A6; --line: #3C4043; --soft: #2A2B2E;
+      --bg: #1B1C1E; --card: #232427; --accent: #8AB4F8; --accent-soft: #1F2F4A;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .logo {
+    width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
+    background: var(--accent-soft); color: var(--accent); flex: none;
+  }
+  header .name { font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+  header nav { margin-left: auto; font-size: 15px; }
+  a { color: var(--accent); }
+  h1 { font-size: clamp(26px, 5vw, 34px); line-height: 1.2; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .date { color: var(--muted); margin: 0 0 24px; }
+  h2 { font-size: 19px; margin: 36px 0 10px; }
+  .summary { background: var(--accent-soft); border-radius: 10px; padding: 16px 18px; }
+  .summary ul { margin: 0; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line);
+          border-radius: 10px; overflow: hidden; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+  thead th { border-top: 0; background: var(--soft); font-weight: 600; }
+  td:first-child { font-weight: 500; }
+  .limited { border-left: 4px solid var(--accent); padding: 4px 0 4px 14px; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  @media (max-width: 520px) { th, td { padding: 9px 10px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+    </div>
+    <a class="name" href="index.html">Health Sync</a>
+    <nav><a href="index.html">Home</a></nav>
+  </header>
+
+  <h1>Privacy policy</h1>
+  <p class="date">Effective October 1, 2026</p>
+
+  <div class="summary">
+    <ul>
+      <li>Health Sync runs on your own computer. There is no Health Sync account and no Health Sync server.</li>
+      <li>Your Google Health data goes directly from Google to your computer and stays on your own devices. The developer never receives it.</li>
+      <li>Your data is never sold, never used for advertising and never shared with anyone.</li>
+    </ul>
+  </div>
+
+  <h2>Data Health Sync reads from Google</h2>
+  <p>With your permission, Health Sync gets <strong>read-only</strong> access to your Google Health data. It cannot change or
+    delete anything in your Google account. Depending on what your devices record, it reads:</p>
+  <ul>
+    <li><strong>Activity and fitness:</strong> steps, distance, calories, active minutes, active zone minutes, heart rate
+      zones, exercise sessions and cardio fitness.</li>
+    <li><strong>Health metrics and measurements:</strong> heart rate, resting heart rate, heart rate variability, blood
+      oxygen, breathing rate, skin temperature and, if a glucose sensor is linked to Google Health, blood glucose.</li>
+    <li><strong>Sleep:</strong> sleep sessions and sleep stages.</li>
+    <li><strong>Profile:</strong> read once, right after you sign in, to confirm that your account has Google Health data.
+      It is shown to you and not saved.</li>
+  </ul>
+  <p>It also saves the name of the device or app that recorded each value (for example, your Fitbit Air).</p>
+
+  <h2>How Health Sync uses it</h2>
+  <p>Only to show you your own data:</p>
+  <ul>
+    <li>to save it as files on your computer that you can open in a spreadsheet;</li>
+    <li>to build a private view of your day on your computer (for example, when you slept, worked, ate or travelled);</li>
+    <li>to learn your personal labels for that view. This learning happens on your computer, and what it learns stays there.</li>
+  </ul>
+  <p>Health Sync does not use your data for advertising, does not sell it, does not build profiles for anyone else, and does
+    not use it to train any model other than your personal one on your own computer.</p>
+
+  <h2>Where it is stored</h2>
+  <p>On your computer, in the Health Sync folder, as ordinary files. Your Google sign-in token is stored there too. The
+    files are not encrypted by Health Sync and are kept until you delete them, so protect your computer with a password
+    and, ideally, disk encryption (BitLocker on Windows, FileVault on macOS).</p>
+
+  <h2>Who it is shared with</h2>
+  <p><strong>No one.</strong> The developer has no access to your data, and Health Sync does not send your Google Health data
+    to any other company or service.</p>
+  <p>If you choose to open your Health Sync pages on your phone or another of your own devices, for example through a
+    private network such as Tailscale, your data travels over that encrypted connection between your devices. That
+    connection is something you set up and control.</p>
+
+  <h2 id="limited-use">Google API Services User Data Policy</h2>
+  <p class="limited">Health Sync's use and transfer of information received from Google APIs will adhere to the
+    <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+    including the Limited Use requirements.</p>
+
+  <h2>Other data you can choose to add</h2>
+  <p>These sources are optional and are processed on your computer:</p>
+  <ul>
+    <li><strong>Computer activity:</strong> which apps and windows were in use, recorded locally by ActivityWatch.</li>
+    <li><strong>Phone location:</strong> sent from a location app on your phone directly to your own computer.</li>
+    <li><strong>Calendar:</strong> downloaded from a calendar link you provide.</li>
+    <li><strong>Voice memos:</strong> recordings that your own iCloud account syncs to your computer, then transcribed on
+      your computer. The audio and text are not sent anywhere else.</li>
+  </ul>
+
+  <h2>Other services Health Sync contacts</h2>
+  <p>Health Sync contacts the services below. <strong>None of them receive your Google Health data.</strong></p>
+  <table>
+    <thead><tr><th>Service</th><th>When</th><th>What it receives</th></tr></thead>
+    <tbody>
+      <tr><td>OpenStreetMap (Nominatim, Overpass and an Overpass mirror run by Kumi Systems)</td>
+        <td>When you stop somewhere that is not one of your saved places</td>
+        <td>The coordinates of that stop, to look up its name (for example, a café). Results are cached so each place is
+          looked up once.</td></tr>
+      <tr><td>OpenStreetMap map tiles</td>
+        <td>When you point at a place on your day view to see it on a map</td>
+        <td>Requests for map images around that place, which reveal its approximate location.</td></tr>
+      <tr><td>Google Fonts and unpkg.com</td>
+        <td>When you open a Health Sync page (fonts) or a map (unpkg)</td>
+        <td>Standard web requests for the page's font and map software, which include your IP address. No data from the
+          page is sent.</td></tr>
+      <tr><td>Your calendar provider</td>
+        <td>If you add a calendar link, a few times a day</td>
+        <td>A request to download that calendar.</td></tr>
+      <tr><td>Hugging Face</td>
+        <td>If you use voice memos: when the speech-recognition model is downloaded or checked for updates</td>
+        <td>A request for the model files. No audio or text is sent.</td></tr>
+      <tr><td>Apple iCloud</td>
+        <td>If you use voice memos</td>
+        <td>Your recordings, through your own iCloud account and under Apple's privacy policy.</td></tr>
+    </tbody>
+  </table>
+  <p>Each of these services handles the requests it receives under its own privacy policy.</p>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li><strong>Stop access:</strong> remove Health Sync at
+      <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. It can then no longer read
+      your Google Health data.</li>
+    <li><strong>Delete your data:</strong> delete the Health Sync folder on your computer. Nothing is kept anywhere else.</li>
+    <li><strong>Turn sources off:</strong> each optional source can be left out or switched off in the settings.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>Health Sync is not intended for children under 13.</p>
+
+  <h2>Not medical advice</h2>
+  <p>Health Sync is not a medical device and does not give medical advice.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: open an issue at
+    <a href="https://github.com/jel0624/health-sync/issues">github.com/jel0624/health-sync/issues</a>.</p>
+
+  <footer>
+    Health Sync is an independent project. It is not made, endorsed or supported by Google or Fitbit.
+    &middot; <a href="index.html">Home</a>
+  </footer>
+</div>
+</body>
+</html>

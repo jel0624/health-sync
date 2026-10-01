@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Health Sync</title>
+<meta name="description" content="Health Sync copies your Fitbit Air data from Google Health to files on your own computer and turns it into a private, labelled view of your day.">
+<style>
+  :root {
+    --ink: #202124; --muted: #5F6368; --line: #E3E5E8; --soft: #F1F3F4;
+    --bg: #F8F9FA; --card: #FFFFFF; --accent: #3B6FD8; --accent-soft: #E8F0FE;
+    --work: #7BA4F0; --sleep: #A9AEB8; --exercise: #7CC4A0; --food: #F2B27A; --leisure: #EE9A9A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E8EAED; --muted: #9AA0A6; --line: #3C4043; --soft: #2A2B2E;
+      --bg: #1B1C1E; --card: #232427; --accent: #8AB4F8; --accent-soft: #1F2F4A;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .logo {
+    width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
+    background: var(--accent-soft); color: var(--accent); flex: none;
+  }
+  header .name { font-weight: 700; font-size: 20px; }
+  header nav { margin-left: auto; font-size: 15px; }
+  a { color: var(--accent); }
+  h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .lead { font-size: 18px; color: var(--muted); margin: 0 0 32px; }
+  h2 { font-size: 20px; margin: 40px 0 12px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 16px 14px;
+    border-left: 4px solid var(--edge, var(--line));
+  }
+  .card h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; font-size: 16px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line);
+          border-radius: 10px; overflow: hidden; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+  thead th { border-top: 0; background: var(--soft); font-weight: 600; }
+  td:first-child { white-space: nowrap; font-weight: 500; }
+  .note { background: var(--accent-soft); border-radius: 10px; padding: 14px 16px; margin-top: 16px; }
+  ul { padding-left: 20px; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  @media (max-width: 520px) {
+    td:first-child { white-space: normal; }
+    th, td { padding: 9px 10px; }
+  }
+  svg { flex: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+    </div>
+    <span class="name">Health Sync</span>
+    <nav><a href="privacy.html">Privacy policy</a></nav>
+  </header>
+
+  <h1>Your Fitbit Air data, on your own computer.</h1>
+  <p class="lead">Health Sync downloads your sleep, heart rate, activity and glucose data from Google Health to files on your
+    computer, and turns it into a private view of how you spent each day. It runs on your machine. There is no
+    Health Sync account and no Health Sync server.</p>
+
+  <h2>What it does</h2>
+  <div class="cards">
+    <div class="card" style="--edge: var(--exercise)">
+      <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>Health sync</h3>
+      <p>Every day, copies your Fitbit Air data from the Google Health API into spreadsheet files (CSV) on your computer.</p>
+    </div>
+    <div class="card" style="--edge: var(--work)">
+      <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z M4 10h16 M9 3v4 M15 3v4"/></svg>Day view</h3>
+      <p>Combines that data with optional sources you switch on (computer activity, phone location, your calendar) into a
+        labelled timeline: work, sleep, eating, commute and so on.</p>
+    </div>
+    <div class="card" style="--edge: var(--food)">
+      <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z M19 11a7 7 0 0 1-14 0 M12 18v4 M8 22h8"/></svg>Voice notes</h3>
+      <p>Optionally transcribes short voice memos on your own computer, so a quick "heading to lunch" helps label the day.</p>
+    </div>
+  </div>
+
+  <h2>Why it asks for access to your Google Health data</h2>
+  <p>When you connect your Google account, Health Sync asks for <strong>read-only</strong> access. It can never change or
+    delete anything in your Google account.</p>
+  <table>
+    <thead><tr><th>Permission</th><th>What it is used for</th></tr></thead>
+    <tbody>
+      <tr><td>Activity and fitness</td><td>Steps, active minutes, calories and exercise sessions, to show when you were moving.</td></tr>
+      <tr><td>Health metrics and measurements</td><td>Heart rate and blood glucose (if a glucose sensor is linked to Google Health), to show your day's physiology next to what you were doing.</td></tr>
+      <tr><td>Sleep</td><td>Sleep sessions and stages, to mark when you were asleep.</td></tr>
+      <tr><td>Profile</td><td>Checked once, right after you sign in, to confirm your Google account has a Google Health profile to read from. It is shown to you and not saved.</td></tr>
+    </tbody>
+  </table>
+  <div class="note">The data goes straight from Google to your computer and stays on your own devices. The developer never receives it,
+    and it is not sold, shared or used for advertising. Details are in the <a href="privacy.html">privacy policy</a>.</div>
+
+  <h2>Status</h2>
+  <p>Health Sync is a personal project in early testing on Windows and macOS. It works with the Fitbit Air and any data
+    you have linked to Google Health.</p>
+
+  <footer>
+    Health Sync is an independent project. It is not made, endorsed or supported by Google or Fitbit.
+    &middot; <a href="privacy.html">Privacy policy</a>
+    &middot; Contact: <a href="https://github.com/jel0624/health-sync/issues">GitHub issues</a>
+  </footer>
+</div>
+</body>
+</html>
