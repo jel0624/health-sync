@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download Omnitrack</title>
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Download Omnitrack for Windows or Mac. Free, runs on your own computer, no account.">
+<style>
+  :root {
+    --ink: #202124; --muted: #5F6368; --line: #E3E5E8; --soft: #F1F3F4;
+    --bg: #F8F9FA; --card: #FFFFFF; --accent: #3B6FD8; --accent-soft: #E8F0FE; --on-accent: #FFFFFF;
+    --warn-soft: #FEF7E0; --warn-line: #F2B27A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E8EAED; --muted: #9AA0A6; --line: #3C4043; --soft: #2A2B2E;
+      --bg: #1B1C1E; --card: #232427; --accent: #8AB4F8; --accent-soft: #1F2F4A; --on-accent: #1B1C1E;
+      --warn-soft: #3A3123; --warn-line: #A8743F;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .logo {
+    width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none;
+    background: #FFFFFF; border: 1px solid #DADCE0;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, .08), 0 2px 6px rgba(16, 24, 40, .08);
+  }
+  .logo svg { display: block; }
+  header .name { font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+  header nav { margin-left: auto; font-size: 15px; display: flex; gap: 14px; }
+  a { color: var(--accent); }
+  h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .lead { font-size: 18px; color: var(--muted); margin: 0 0 24px; }
+  h2 { font-size: 20px; margin: 40px 0 12px; }
+  h3 { font-size: 16px; margin: 0; }
+  .note { background: var(--accent-soft); border-radius: 10px; padding: 14px 16px; margin: 16px 0; }
+  .warn { background: var(--warn-soft); border-left: 4px solid var(--warn-line); border-radius: 10px; padding: 12px 16px; }
+  .platforms { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 18px 16px; min-width: 0; }
+  .card.yours { border-color: var(--accent); }
+  .card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+  .badge { margin-left: auto; font-size: 12px; color: var(--accent); background: var(--accent-soft);
+           border-radius: 999px; padding: 2px 9px; display: none; white-space: nowrap; }
+  .yours .badge { display: inline-block; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 14px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--on-accent);
+    text-decoration: none; font-weight: 600; border-radius: 10px; padding: 10px 16px; font-size: 15px;
+  }
+  .btn:hover { filter: brightness(1.06); }
+  ol { padding-left: 22px; margin: 14px 0 0; }
+  ol li { margin: 6px 0; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  .ui { font-weight: 600; }
+  details { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 10px; }
+  summary { cursor: pointer; color: var(--accent); font-size: 15px; }
+  .cmd { display: flex; align-items: flex-start; gap: 8px; margin: 10px 0 4px; }
+  pre {
+    flex: 1; min-width: 0; margin: 0; background: var(--soft); border-radius: 8px; padding: 10px 12px;
+    font: 13px/1.5 ui-monospace, SFMono-Regular, Consolas, Menlo, monospace;
+    white-space: pre-wrap; overflow-wrap: anywhere;
+  }
+  code { font: 14px ui-monospace, SFMono-Regular, Consolas, Menlo, monospace; background: var(--soft);
+         border-radius: 4px; padding: 1px 4px; overflow-wrap: anywhere; }
+  .copy {
+    flex: none; margin-top: 4px; font: 12px/1 inherit; color: var(--accent); background: var(--card);
+    border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; cursor: pointer;
+  }
+  .small { font-size: 14px; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line);
+          border-radius: 10px; overflow: hidden; font-size: 15px; table-layout: fixed; }
+  th, td { text-align: left; padding: 10px 14px; border-top: 1px solid var(--line); vertical-align: top;
+           overflow-wrap: anywhere; }
+  thead th { border-top: 0; background: var(--soft); font-weight: 600; }
+  th:first-child, td:first-child { width: 26%; font-weight: 500; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  @media (max-width: 520px) {
+    th, td { padding: 9px 10px; }
+    th:first-child, td:first-child { width: 30%; }
+  }
+  svg { flex: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><clipPath id="site-logo-0"><path d="M6.03 12.4L3.2 15.23L-2.73 17.74L-3.85 13.72L-3.88 9.54L-2.83 5.5L-0.77 1.86L2.16 -1.11L5.76 -3.23L9.78 -4.35L13.96 -4.38L15.97 -4L14 3.7L14 7.7L12 11.5Z"/></clipPath><clipPath id="site-logo-1"><path d="M12 7.7L12 3.7L12 -4.5L16.14 -3.95L20 -2.36L23.31 0.19L25.86 3.5L27.45 7.36L28 11.5L27.45 15.64L26.73 17.75L20.79 15.23L17.97 12.39L12 11.5Z"/></clipPath><clipPath id="site-logo-2"><path d="M19.39 10.98L22.21 13.82L27.6 15.04L26.15 18.96L23.74 22.37L20.53 25.04L16.73 26.78L12.62 27.49L8.46 27.1L4.54 25.65L1.13 23.24L-1.54 20.03L-3.28 16.23L-3.6 15.04L1.79 13.81L4.61 10.99L12 11.5Z"/></clipPath></defs><g fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 12.4a5.5 5.5 0 0 1 7.8-7.8L12 5.7l1-1.1a5.5 5.5 0 0 1 7.8 0 5.5 5.5 0 0 1 0 7.8l-1 1L12 21l-7.8-7.6z" stroke="#DD6F1F" clip-path="url(#site-logo-0)"/><path d="M3.2 12.4a5.5 5.5 0 0 1 7.8-7.8L12 5.7l1-1.1a5.5 5.5 0 0 1 7.8 0 5.5 5.5 0 0 1 0 7.8l-1 1L12 21l-7.8-7.6z" stroke="#3B6FD8" clip-path="url(#site-logo-1)"/><path d="M3.2 12.4a5.5 5.5 0 0 1 7.8-7.8L12 5.7l1-1.1a5.5 5.5 0 0 1 7.8 0 5.5 5.5 0 0 1 0 7.8l-1 1L12 21l-7.8-7.6z" stroke="#2E9E6B" clip-path="url(#site-logo-2)"/></g></svg>
+    </div>
+    <a class="name" href="index.html">Omnitrack</a>
+    <nav><a href="index.html">Home</a><a href="privacy.html">Privacy</a></nav>
+  </header>
+
+  <h1>Download Omnitrack</h1>
+  <p class="lead">Free, and it runs on your own computer. There is no account to create, and your data stays on your
+    computer. Invited pilot testers can choose to send theirs to the developer (<a href="privacy.html">how</a>).</p>
+
+  <div class="note">This is a <strong>beta</strong> (version <span class="ver">0.2.0</span>). The installers are not
+    signed yet, so Windows and macOS will warn you the first time. The steps below show what to click.</div>
+
+  <div class="platforms">
+    <section class="card" id="windows">
+      <div class="card-head">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5l8-1.2v7.2H3z M13 4l8-1.2v8.7h-8z M3 12.5h8v7.2l-8-1.2z M13 12.5h8v8.7l-8-1.2z"/></svg>
+        <h3>Windows</h3><span class="badge">Your computer</span>
+      </div>
+      <p class="meta">Windows 10 (1809 or newer) or 11, 64-bit &middot; installs for you only, no administrator rights</p>
+      <a class="btn dl-windows" href="https://github.com/jel0624/health-sync/releases/download/v0.2.0/Omnitrack-0.2.0-setup.exe">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12 M7 10l5 5 5-5 M5 21h14"/></svg>
+        Download for Windows</a>
+      <ol>
+        <li>If your browser says the file is not commonly downloaded: in <strong>Edge</strong>, point at the download,
+          click <span class="ui">...</span> &gt; <span class="ui">Keep</span>, then <span class="ui">Show more</span> &gt;
+          <span class="ui">Keep anyway</span>. In <strong>Chrome</strong>, choose <span class="ui">Keep</span> (or
+          <span class="ui">Download suspicious file</span>).</li>
+        <li>Open the downloaded <span class="file-windows">Omnitrack-0.2.0-setup.exe</span>. Windows shows
+          <span class="ui">"Windows protected your PC"</span>. Click <span class="ui">More info</span>, then
+          <span class="ui">Run anyway</span>.</li>
+        <li>Click <span class="ui">Install</span>. Setup downloads Python and the libraries Omnitrack needs; this
+          takes a few minutes.</li>
+        <li>The setup page opens in your browser. Continue there. Later, open Omnitrack from the Start menu.</li>
+      </ol>
+      <p class="small">If Windows says <span class="ui">Smart App Control blocked</span> the app, there is no
+        "Run anyway": this beta is not signed, so it cannot be installed while Smart App Control is on (Windows
+        Security &gt; App &amp; browser control &gt; Smart App Control).</p>
+      <details>
+        <summary>Or install with one line (PowerShell)</summary>
+        <div class="cmd"><pre>powershell -ExecutionPolicy Bypass -c "irm https://jel0624.github.io/health-sync/install.ps1 | iex"</pre><button class="copy" type="button">Copy</button></div>
+        <p class="small">Paste it into PowerShell (Start menu &gt; PowerShell). It does the same as the installer above,
+          without the setup window, and adds the same Start-menu entries.</p>
+      </details>
+    </section>
+
+    <section class="card" id="mac">
+      <div class="card-head">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v10H4z M2 18h20 M9 18l1 2h4l1-2"/></svg>
+        <h3>Mac</h3><span class="badge">Your computer</span>
+      </div>
+      <p class="meta">macOS 13 Ventura or newer &middot; Apple Silicon and Intel</p>
+      <a class="btn dl-macos" href="https://github.com/jel0624/health-sync/releases/download/v0.2.0/Omnitrack-0.2.0.pkg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12 M7 10l5 5 5-5 M5 21h14"/></svg>
+        Download for Mac</a>
+      <ol>
+        <li>Open the downloaded <span class="file-macos">Omnitrack-0.2.0.pkg</span>. macOS says it
+          <span class="ui">could not verify</span> the package. Click <span class="ui">Done</span> (or OK).</li>
+        <li>Open <span class="ui">System Settings &gt; Privacy &amp; Security</span>, scroll down to the message about
+          Omnitrack and click <span class="ui">Open Anyway</span>. Confirm with your password.</li>
+        <li>Follow the installer. It asks for your password once to unpack its files; Omnitrack itself runs as you.
+          It then downloads Python and the libraries (a few minutes).</li>
+        <li>The setup page opens in your browser. Continue there. Later, open <em>Omnitrack</em> from your
+          Applications folder (in your home folder).</li>
+      </ol>
+      <details>
+        <summary>Or install with one line (Terminal)</summary>
+        <div class="cmd"><pre>curl -fsSL https://jel0624.github.io/health-sync/install.sh | bash</pre><button class="copy" type="button">Copy</button></div>
+        <p class="small">Paste it into Terminal (Applications &gt; Utilities). It does the same as the package, needs no
+          password and shows no security warning.</p>
+      </details>
+    </section>
+  </div>
+
+  <h2>What you need</h2>
+  <ul>
+    <li>A Fitbit Air (or another device) whose data is in the <strong>Google Health</strong> app, and the Google
+      account it belongs to.</li>
+    <li>About 2 GB of free disk space and an internet connection while installing.</li>
+  </ul>
+  <p>Optional, each switched on in the setup page and each with a Test button:</p>
+  <ul>
+    <li><strong>Computer activity:</strong> <a href="https://activitywatch.net/">ActivityWatch</a>. On Windows the setup
+      page installs it for you. On a Mac, download it from the ActivityWatch site, drag it to Applications and open it,
+      allow it under System Settings &gt; Privacy &amp; Security &gt; Accessibility, and add it under System Settings
+      &gt; General &gt; Login Items so it starts with your Mac.</li>
+    <li><strong>Calendar:</strong> the private address of your calendar in iCal format (in Google Calendar: Settings &gt;
+      your calendar &gt; "Secret address in iCal format").</li>
+    <li><strong>Voice memos:</strong> the <em>Just Press Record</em> iPhone app (a paid app) saving to iCloud Drive. On
+      Windows you also need iCloud for Windows with iCloud Drive turned on.</li>
+    <li><strong>Phone location:</strong> <a href="https://tailscale.com/download">Tailscale</a> on this computer and on
+      your iPhone (same account), and the free <em>Overland</em> iPhone app. The setup page shows a QR code that fills
+      in Overland for you. Your phone only sends its location; your pages open on your computer only.</li>
+  </ul>
+
+  <h2>Why the warnings?</h2>
+  <div class="warn">
+    <p style="margin:0 0 8px"><strong>"Windows protected your PC" / "Apple could not verify".</strong> Code-signing
+      certificates cost money every year, and this beta is not signed yet. The warning says the publisher is unknown,
+      not that something harmful was found.</p>
+    <p style="margin:0"><strong>"Google hasn't verified this app".</strong> When you connect your Google account,
+      Google shows this for apps that have not finished Google's review. Click <span class="ui">Advanced</span>, then
+      <span class="ui">Go to Omnitrack (unsafe)</span>. On the next screen the permission boxes start empty: tick
+      <span class="ui">Select all</span>, then <span class="ui">Continue</span>. Omnitrack can only read your data;
+      it can never change or delete anything in your Google account.</p>
+  </div>
+
+  <h2>What gets installed where</h2>
+  <table>
+    <thead><tr><th></th><th>Windows</th><th>Mac</th></tr></thead>
+    <tbody>
+      <tr><td>The app</td><td><code>%LOCALAPPDATA%\Omnitrack\app</code></td>
+        <td><code>~/Library/Application Support/Omnitrack/app</code></td></tr>
+      <tr><td>Your data</td><td><code>%LOCALAPPDATA%\Omnitrack\data</code></td>
+        <td><code>~/Library/Application Support/Omnitrack/data</code></td></tr>
+      <tr><td>Python and libraries</td><td colspan="2">A private copy inside the app folder (about 400 MB). Nothing is added
+        to your PATH or changed in other programs.</td></tr>
+      <tr><td>In the background</td><td>Three tasks for your user: <em>Omnitrack Server</em> (at sign-in),
+        <em>Omnitrack Daily</em> (each morning), <em>Omnitrack Memos</em> (only with voice memos); each name ends
+        with your Windows account's id</td>
+        <td>Three helpers for your user in <code>~/Library/LaunchAgents</code> (server, daily, memos)</td></tr>
+      <tr><td>Google sign-in</td><td>Windows Credential Manager</td><td>Your login Keychain</td></tr>
+      <tr><td>Your day page</td><td colspan="2"><code>http://127.0.0.1:5710</code> (or the next free number when another
+        program uses 5710), only on this computer. With phone location on, your phone can send its location to this
+        address through Tailscale, but cannot open your pages.</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Omnitrack checks this website once a day for updates (you can turn that off). Updates install with
+    one click and keep your data. What Omnitrack stores and which services it contacts is listed in the
+    <a href="privacy.html">privacy policy</a>.</p>
+
+  <h2>Uninstall</h2>
+  <ul>
+    <li><strong>Windows:</strong> Settings &gt; Apps &gt; Installed apps &gt; Omnitrack &gt; Uninstall (for either
+      installer). Or, in PowerShell:
+      <code>&amp; "$env:LOCALAPPDATA\Omnitrack\app\omnitrack.cmd" uninstall</code></li>
+    <li><strong>Mac:</strong> in Terminal, run
+      <code>"$HOME/Library/Application Support/Omnitrack/app/omnitrack" uninstall</code>. It also removes
+      <em>Omnitrack</em> from your Applications folder.</li>
+    <li>Both ask whether to delete your data as well (the default keeps it). To also remove Omnitrack's access to your
+      Google account, visit <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+  </ul>
+
+  <h2 id="changes">Changes</h2>
+  <p><strong>0.3.0</strong> (October 2026): Pilot release for invited testers: Report a bug and Feedback on every page, sending your data to the developer only if you choose to (encrypted so only he can read it), and automatic updates. New: the Omnimons (chat about your days, goals and an Analysis page), a Journal, a Minimal look and one Settings page.</p>
+  <p><strong>0.2.0</strong> (October 2026): Health Sync is now called Omnitrack. Installing 0.2.0 (or "Install
+    update" in Health Sync's Settings) replaces Health Sync and keeps everything: your data folder moves to the
+    Omnitrack folder, and your Google sign-in, port and settings stay as they were. Health Sync's background tasks,
+    Start-menu entries or app and its folder are removed. A new welcome page.</p>
+  <p><strong>0.1.0</strong> (October 2026): first beta for Windows and Mac. Google Health sync and the day view, plus
+    optional computer activity, calendar, voice memos and phone location.</p>
+
+  <footer>
+    Omnitrack is an independent project. It is not made, endorsed or supported by Google or Fitbit.
+    &middot; <a href="privacy.html">Privacy policy</a>
+    &middot; Contact: <a href="https://github.com/jel0624/health-sync/issues">GitHub issues</a>
+  </footer>
+</div>
+<script>
+  // Point the buttons at the current release (version.json sits next to this page) and mark the visitor's system.
+  (function () {
+    var ua = navigator.userAgent || "";
+    var mine = /Mac OS X|Macintosh/.test(ua) && !/iPhone|iPad/.test(ua) ? "mac" : (/Windows/.test(ua) ? "windows" : "");
+    if (mine) {
+      var card = document.getElementById(mine);
+      card.classList.add("yours");
+      card.parentNode.insertBefore(card, card.parentNode.firstElementChild);
+    }
+    fetch("version.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (v) {
+      if (!v || !v.assets) return;
+      var name = function (url) { return url.split("/").pop(); };
+      [["windows", ".dl-windows", ".file-windows"], ["macos", ".dl-macos", ".file-macos"]].forEach(function (k) {
+        var a = v.assets[k[0]];
+        if (!a || !a.url) return;
+        if (!a.sha256) {      // no package in this release (a Mac .pkg needs a Mac to build): the one-line install
+          var btn = document.querySelector(k[1]), card = btn.closest(".card");
+          btn.style.display = "none";
+          var steps = card.querySelector("ol"), more = card.querySelector("details");
+          if (steps) steps.style.display = "none";
+          if (more) { more.open = true; more.querySelector("summary").textContent = "Install with one line (Terminal)"; }
+          return;
+        }
+        document.querySelector(k[1]).href = a.url;
+        document.querySelector(k[2]).textContent = name(a.url);
+      });
+      document.querySelectorAll(".ver").forEach(function (e) { e.textContent = v.latest; });
+    }).catch(function () {});
+    document.querySelectorAll(".copy").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var text = b.parentNode.querySelector("pre").textContent;
+        if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () {
+          b.textContent = "Copied";
+          setTimeout(function () { b.textContent = "Copy"; }, 1500);
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>

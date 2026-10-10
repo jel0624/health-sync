@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Health Sync</title>
-<meta name="description" content="Health Sync copies your Fitbit Air data from Google Health to files on your own computer and turns it into a private, labelled view of your day.">
+<title>Omnitrack</title>
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Omnitrack copies your Fitbit Air data from Google Health to files on your own computer and turns it into a private, labelled view of your day.">
 <style>
   :root {
     --ink: #202124; --muted: #5F6368; --line: #E3E5E8; --soft: #F1F3F4;
@@ -25,9 +27,11 @@
   .wrap { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
   header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
   .logo {
-    width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
-    background: var(--accent-soft); color: var(--accent); flex: none;
+    width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none;
+    background: #FFFFFF; border: 1px solid #DADCE0;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, .08), 0 2px 6px rgba(16, 24, 40, .08);
   }
+  .logo svg { display: block; }
   header .name { font-weight: 700; font-size: 20px; }
   header nav { margin-left: auto; font-size: 15px; }
   a { color: var(--accent); }
@@ -60,21 +64,22 @@
 <div class="wrap">
   <header>
     <div class="logo" aria-hidden="true">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><clipPath id="site-logo-0"><path d="M6.03 12.4L3.2 15.23L-2.73 17.74L-3.85 13.72L-3.88 9.54L-2.83 5.5L-0.77 1.86L2.16 -1.11L5.76 -3.23L9.78 -4.35L13.96 -4.38L15.97 -4L14 3.7L14 7.7L12 11.5Z"/></clipPath><clipPath id="site-logo-1"><path d="M12 7.7L12 3.7L12 -4.5L16.14 -3.95L20 -2.36L23.31 0.19L25.86 3.5L27.45 7.36L28 11.5L27.45 15.64L26.73 17.75L20.79 15.23L17.97 12.39L12 11.5Z"/></clipPath><clipPath id="site-logo-2"><path d="M19.39 10.98L22.21 13.82L27.6 15.04L26.15 18.96L23.74 22.37L20.53 25.04L16.73 26.78L12.62 27.49L8.46 27.1L4.54 25.65L1.13 23.24L-1.54 20.03L-3.28 16.23L-3.6 15.04L1.79 13.81L4.61 10.99L12 11.5Z"/></clipPath></defs><g fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 12.4a5.5 5.5 0 0 1 7.8-7.8L12 5.7l1-1.1a5.5 5.5 0 0 1 7.8 0 5.5 5.5 0 0 1 0 7.8l-1 1L12 21l-7.8-7.6z" stroke="#DD6F1F" clip-path="url(#site-logo-0)"/><path d="M3.2 12.4a5.5 5.5 0 0 1 7.8-7.8L12 5.7l1-1.1a5.5 5.5 0 0 1 7.8 0 5.5 5.5 0 0 1 0 7.8l-1 1L12 21l-7.8-7.6z" stroke="#3B6FD8" clip-path="url(#site-logo-1)"/><path d="M3.2 12.4a5.5 5.5 0 0 1 7.8-7.8L12 5.7l1-1.1a5.5 5.5 0 0 1 7.8 0 5.5 5.5 0 0 1 0 7.8l-1 1L12 21l-7.8-7.6z" stroke="#2E9E6B" clip-path="url(#site-logo-2)"/></g></svg>
     </div>
-    <span class="name">Health Sync</span>
+    <span class="name">Omnitrack</span>
     <nav><a href="privacy.html">Privacy policy</a></nav>
   </header>
 
   <h1>Your Fitbit Air data, on your own computer.</h1>
-  <p class="lead">Health Sync downloads your sleep, heart rate, activity and glucose data from Google Health to files on your
+  <p class="lead">Omnitrack downloads your sleep, heart rate, activity and glucose data from Google Health to files on your
     computer, and turns it into a private view of how you spent each day. It runs on your machine. There is no
-    Health Sync account and no Health Sync server.</p>
+    Omnitrack account and no Omnitrack server. (Up to version 0.1 it was called Health
+    Sync.)</p>
 
   <h2>What it does</h2>
   <div class="cards">
     <div class="card" style="--edge: var(--exercise)">
-      <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>Health sync</h3>
+      <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>Fitbit data</h3>
       <p>Every day, copies your Fitbit Air data from the Google Health API into spreadsheet files (CSV) on your computer.</p>
     </div>
     <div class="card" style="--edge: var(--work)">
@@ -89,7 +94,7 @@
   </div>
 
   <h2>Why it asks for access to your Google Health data</h2>
-  <p>When you connect your Google account, Health Sync asks for <strong>read-only</strong> access. It can never change or
+  <p>When you connect your Google account, Omnitrack asks for <strong>read-only</strong> access. It can never change or
     delete anything in your Google account.</p>
   <table>
     <thead><tr><th>Permission</th><th>What it is used for</th></tr></thead>
@@ -104,11 +109,11 @@
     and it is not sold, shared or used for advertising. Details are in the <a href="privacy.html">privacy policy</a>.</div>
 
   <h2>Status</h2>
-  <p>Health Sync is a personal project in early testing on Windows and macOS. It works with the Fitbit Air and any data
+  <p>Omnitrack is a personal project in early testing on Windows and macOS. It works with the Fitbit Air and any data
     you have linked to Google Health.</p>
 
   <footer>
-    Health Sync is an independent project. It is not made, endorsed or supported by Google or Fitbit.
+    Omnitrack is an independent project. It is not made, endorsed or supported by Google or Fitbit.
     &middot; <a href="privacy.html">Privacy policy</a>
     &middot; Contact: <a href="https://github.com/jel0624/health-sync/issues">GitHub issues</a>
   </footer>

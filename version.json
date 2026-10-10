@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Omnitrack",
+  "latest": "0.3.0",
+  "released": "2026-10-10",
+  "min_supported": "0.1.0",
+  "notes_url": "https://jel0624.github.io/health-sync/download.html#changes",
+  "assets": {
+    "zip": {
+      "url": "https://github.com/jel0624/health-sync/releases/download/v0.3.0/omnitrack-0.3.0.zip",
+      "sha256": "8606598e9718cdea4bb1787ad6a073c77a773daaf7d1b4fa769774c84113aee9",
+      "size": 10023610
+    },
+    "windows": {
+      "url": "https://github.com/jel0624/health-sync/releases/download/v0.3.0/Omnitrack-0.3.0-setup.exe",
+      "sha256": "56c4db68cedc088db9945896d0b34f5665e8d03d896a4e3afd9776f30af911bf",
+      "size": 23576187
+    },
+    "macos": {
+      "url": "https://github.com/jel0624/health-sync/releases/download/v0.3.0/Omnitrack-0.3.0.pkg",
+      "sha256": null,
+      "size": null
+    }
+  },
+  "uv": {
+    "version": "0.12.21",
+    "windows-x86_64": {
+      "url": "https://github.com/astral-sh/uv/releases/download/0.12.21/uv-x86_64-pc-windows-msvc.zip",
+      "sha256": "5d223efa0bf00208c3853246af09420419dfbd352536aa6bb8163d6170e23890"
+    },
+    "macos-arm64": {
+      "url": "https://github.com/astral-sh/uv/releases/download/0.12.21/uv-aarch64-apple-darwin.tar.gz",
+      "sha256": "b88bda573e566ef9bced66b155fe0408626fbbc053aee1c30ba686f0728c9447"
+    },
+    "macos-x86_64": {
+      "url": "https://github.com/astral-sh/uv/releases/download/0.12.21/uv-x86_64-apple-darwin.tar.gz",
+      "sha256": "2b336763b396ec6afa20c5a8b083538ca7402445b868311979d740a4344c17d8"
+    }
+  }
+}

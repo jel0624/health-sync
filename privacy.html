@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Health Sync Privacy Policy</title>
-<meta name="description" content="How Health Sync handles your Google Health data and the other data it uses. Everything stays on your own computer.">
+<title>Omnitrack Privacy Policy</title>
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="How Omnitrack handles your Google Health data and the other data it uses. Everything stays on your own computer.">
 <style>
   :root {
     --ink: #202124; --muted: #5F6368; --line: #E3E5E8; --soft: #F1F3F4;
@@ -24,9 +26,11 @@
   .wrap { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
   header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
   .logo {
-    width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
-    background: var(--accent-soft); color: var(--accent); flex: none;
+    width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none;
+    background: #FFFFFF; border: 1px solid #DADCE0;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, .08), 0 2px 6px rgba(16, 24, 40, .08);
   }
+  .logo svg { display: block; }
   header .name { font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
   header nav { margin-left: auto; font-size: 15px; }
   a { color: var(--accent); }
@@ -43,6 +47,8 @@
   thead th { border-top: 0; background: var(--soft); font-weight: 600; }
   td:first-child { font-weight: 500; }
   .limited { border-left: 4px solid var(--accent); padding: 4px 0 4px 14px; }
+  code { font: 14px ui-monospace, SFMono-Regular, Consolas, Menlo, monospace; background: var(--soft);
+         border-radius: 4px; padding: 1px 4px; overflow-wrap: anywhere; }
   footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
   @media (max-width: 520px) { th, td { padding: 9px 10px; } }
 </style>
@@ -51,25 +57,28 @@
 <div class="wrap">
   <header>
     <div class="logo" aria-hidden="true">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><clipPath id="site-logo-0"><path d="M6.03 12.4L3.2 15.23L-2.73 17.74L-3.85 13.72L-3.88 9.54L-2.83 5.5L-0.77 1.86L2.16 -1.11L5.76 -3.23L9.78 -4.35L13.96 -4.38L15.97 -4L14 3.7L14 7.7L12 11.5Z"/></clipPath><clipPath id="site-logo-1"><path d="M12 7.7L12 3.7L12 -4.5L16.14 -3.95L20 -2.36L23.31 0.19L25.86 3.5L27.45 7.36L28 11.5L27.45 15.64L26.73 17.75L20.79 15.23L17.97 12.39L12 11.5Z"/></clipPath><clipPath id="site-logo-2"><path d="M19.39 10.98L22.21 13.82L27.6 15.04L26.15 18.96L23.74 22.37L20.53 25.04L16.73 26.78L12.62 27.49L8.46 27.1L4.54 25.65L1.13 23.24L-1.54 20.03L-3.28 16.23L-3.6 15.04L1.79 13.81L4.61 10.99L12 11.5Z"/></clipPath></defs><g fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 12.4a5.5 5.5 0 0 1 7.8-7.8L12 5.7l1-1.1a5.5 5.5 0 0 1 7.8 0 5.5 5.5 0 0 1 0 7.8l-1 1L12 21l-7.8-7.6z" stroke="#DD6F1F" clip-path="url(#site-logo-0)"/><path d="M3.2 12.4a5.5 5.5 0 0 1 7.8-7.8L12 5.7l1-1.1a5.5 5.5 0 0 1 7.8 0 5.5 5.5 0 0 1 0 7.8l-1 1L12 21l-7.8-7.6z" stroke="#3B6FD8" clip-path="url(#site-logo-1)"/><path d="M3.2 12.4a5.5 5.5 0 0 1 7.8-7.8L12 5.7l1-1.1a5.5 5.5 0 0 1 7.8 0 5.5 5.5 0 0 1 0 7.8l-1 1L12 21l-7.8-7.6z" stroke="#2E9E6B" clip-path="url(#site-logo-2)"/></g></svg>
     </div>
-    <a class="name" href="index.html">Health Sync</a>
+    <a class="name" href="index.html">Omnitrack</a>
     <nav><a href="index.html">Home</a></nav>
   </header>
 
   <h1>Privacy policy</h1>
-  <p class="date">Effective October 1, 2026</p>
+  <p class="date">Effective October 1, 2026 (revised the same day: every service is listed below; revised
+    October 7, 2026: the <a href="#pilot">pilot program</a> for invited testers)</p>
 
   <div class="summary">
     <ul>
-      <li>Health Sync runs on your own computer. There is no Health Sync account and no Health Sync server.</li>
-      <li>Your Google Health data goes directly from Google to your computer and stays on your own devices. The developer never receives it.</li>
+      <li>Omnitrack runs on your own computer. There is no Omnitrack account and no Omnitrack server. (Omnitrack
+        was called Health Sync up to version 0.1; this policy covers both.)</li>
+      <li>Your Google Health data goes directly from Google to your computer and stays on your own devices. The developer never receives it, unless you are an invited tester and
+        join the <a href="#pilot">pilot program</a>.</li>
       <li>Your data is never sold, never used for advertising and never shared with anyone.</li>
     </ul>
   </div>
 
-  <h2>Data Health Sync reads from Google</h2>
-  <p>With your permission, Health Sync gets <strong>read-only</strong> access to your Google Health data. It cannot change or
+  <h2>Data Omnitrack reads from Google</h2>
+  <p>With your permission, Omnitrack gets <strong>read-only</strong> access to your Google Health data. It cannot change or
     delete anything in your Google account. Depending on what your devices record, it reads:</p>
   <ul>
     <li><strong>Activity and fitness:</strong> steps, distance, calories, active minutes, active zone minutes, heart rate
@@ -82,32 +91,39 @@
   </ul>
   <p>It also saves the name of the device or app that recorded each value (for example, your Fitbit Air).</p>
 
-  <h2>How Health Sync uses it</h2>
+  <h2>How Omnitrack uses it</h2>
   <p>Only to show you your own data:</p>
   <ul>
     <li>to save it as files on your computer that you can open in a spreadsheet;</li>
     <li>to build a private view of your day on your computer (for example, when you slept, worked, ate or travelled);</li>
     <li>to learn your personal labels for that view. This learning happens on your computer, and what it learns stays there.</li>
   </ul>
-  <p>Health Sync does not use your data for advertising, does not sell it, does not build profiles for anyone else, and does
-    not use it to train any model other than your personal one on your own computer.</p>
+  <p>Omnitrack does not use your data for advertising, does not sell it, does not build profiles for anyone else, and does
+    not use it to train any model other than your personal one on your own computer. If you join the
+    <a href="#pilot">pilot program</a>, the data you send is used to improve how Omnitrack labels days.</p>
 
   <h2>Where it is stored</h2>
-  <p>On your computer, in the Health Sync folder, as ordinary files. Your Google sign-in token is stored there too. The
-    files are not encrypted by Health Sync and are kept until you delete them, so protect your computer with a password
-    and, ideally, disk encryption (BitLocker on Windows, FileVault on macOS).</p>
+  <p>On your computer, in the Omnitrack data folder, as ordinary files (on Windows
+    <code>%LOCALAPPDATA%\Omnitrack\data</code>, on a Mac <code>~/Library/Application Support/Omnitrack/data</code>).
+    Your Google sign-in token is kept in your system's credential store: Windows Credential Manager or the macOS
+    Keychain. The files are not encrypted by Omnitrack and are kept until you delete them, so protect your computer
+    with a password and, ideally, disk encryption (BitLocker on Windows, FileVault on macOS).</p>
 
   <h2>Who it is shared with</h2>
-  <p><strong>No one.</strong> The developer has no access to your data, and Health Sync does not send your Google Health data
-    to any other company or service.</p>
-  <p>If you choose to open your Health Sync pages on your phone or another of your own devices, for example through a
-    private network such as Tailscale, your data travels over that encrypted connection between your devices. That
-    connection is something you set up and control.</p>
+  <p><strong>No one.</strong> The developer has no access to your data (unless you join the
+    <a href="#pilot">pilot program</a> and send it), and Omnitrack does not send your Google Health data
+    to any other company or service, with one exception you control: if you connect ChatGPT and turn on health data
+    for the Bloom or Zen coach, your questions to that coach go to OpenAI with your health data. Otherwise the day you
+    ask about goes to OpenAI without any Google Health data (<a href="#chatgpt">details</a>).</p>
+  <p>If you turn on phone location, your phone sends its location to your own computer through Tailscale, a private,
+    encrypted network between your own devices that you set up and control. Your Omnitrack pages and settings
+    open only on the computer itself: other devices in that network can send locations (with a secret token) but
+    cannot open your pages.</p>
 
   <h2 id="limited-use">Google user data policies</h2>
   <p class="limited">The use of information received from the Google Health API will adhere to the
     <a href="https://developers.google.com/health/policies/health-api-developer-user-data-policy">Google Health API
-    Developer and User Data Policy</a>, including the Limited Use requirements. Health Sync's use and transfer of
+    Developer and User Data Policy</a>, including the Limited Use requirements. Omnitrack's use and transfer of
     information received from Google APIs will also adhere to the
     <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
     including the Limited Use requirements.</p>
@@ -119,11 +135,66 @@
     <li><strong>Phone location:</strong> sent from a location app on your phone directly to your own computer.</li>
     <li><strong>Calendar:</strong> downloaded from a calendar link you provide.</li>
     <li><strong>Voice memos:</strong> recordings that your own iCloud account syncs to your computer, then transcribed on
-      your computer. The audio and text are not sent anywhere else.</li>
+      your computer. The audio and text are not sent anywhere else, unless you ask ChatGPT about a day (below).</li>
   </ul>
 
-  <h2>Other services Health Sync contacts</h2>
-  <p>Health Sync contacts the services below. <strong>None of them receive your Google Health data.</strong></p>
+  <h2 id="chatgpt">Optional: asking ChatGPT about your day</h2>
+  <p>If you connect ChatGPT in Settings ("Continue with ChatGPT"), you can ask questions about a day from its day page,
+    and ChatGPT answers using your own ChatGPT plan. Nothing is sent until you ask. When you ask, OpenAI receives:</p>
+  <ul>
+    <li>your question, your recent conversation with that coach (Spark, Bloom or Zen) and its short notes on your
+      earlier conversations with it (written by ChatGPT, kept on your computer);</li>
+    <li>what you told the coaches about yourself when they got to know you (your job, for example);</li>
+    <li>the text of each goal you add, once, so it becomes something Omnitrack can measure (your progress is worked
+      out on your computer);</li>
+    <li>a text summary of the day you are looking at, and one line for each of the six days before: activities and
+      their times, place names, and, unless you turn them off in Settings, app names, calendar event titles and the
+      text of your voice memos;</li>
+    <li>your health data from Google Health and your glucose sensor (sleep, steps, heart rate, glucose, exercise)
+      <strong>only</strong> if you turn it on for Bloom or Zen in Settings, and only with your questions to that
+      coach. It is off until you turn it on; Spark never gets it.</li>
+  </ul>
+  <p><strong>Never sent:</strong> map coordinates or addresses, window and website titles, and your Google sign-in;
+    and no Google Health data unless you turned it on as above.</p>
+  <p>OpenAI processes this under your ChatGPT account and
+    <a href="https://openai.com/policies/privacy-policy/">OpenAI's privacy policy</a>; Omnitrack asks it not to
+    store the conversation. Your ChatGPT sign-in token is kept on your computer in Windows Credential Manager or the
+    macOS Keychain. The developer receives nothing. Disconnect at any time in Settings, or remove Omnitrack in
+    ChatGPT's settings.</p>
+
+  <h2 id="pilot">Optional: the pilot program (invited testers only)</h2>
+  <p>Before Omnitrack is released, a few people test it at the developer's invitation. A tester joins on the Pilot
+    page of the app with a personal code, after reading what joining means and ticking "I agree". Nothing is sent
+    before that. A tester can then send bug reports, written feedback and their data, so that the developer can find
+    bugs and compare Omnitrack's labels with the tester's corrections to improve how Omnitrack labels days.</p>
+  <p><strong>What is sent</strong>, only when the tester presses Send, or once a week if they allow it, and only the
+    kinds of data they leave ticked:</p>
+  <ul>
+    <li>Google Health data for the days sent: sleep, steps, heart rate, heart rate variability, oxygen saturation,
+      exercise and, if linked, blood glucose;</li>
+    <li>phone location fixes and the places Omnitrack found;</li>
+    <li>computer activity: app names and times, with window titles unless the tester leaves them out;</li>
+    <li>calendar events and voice memo transcripts for those days (each can be left out);</li>
+    <li>Omnitrack's labels, its model's guesses, the questions it asked, and the tester's answers and corrections;</li>
+    <li>with a bug report: what the tester writes, a screenshot if they add one, the page they were on, recent error
+      messages and logs, with passwords, sign-in tokens and private links removed first.</li>
+  </ul>
+  <p><strong>Never sent:</strong> sign-in tokens, the calendar link, voice memo audio and Omnitrack conversations.</p>
+  <p><strong>How it is protected:</strong> everything is encrypted on the tester's computer with the developer's
+    public key, so only the developer can open it. It travels through a small relay on Cloudflare (a Worker and its
+    R2 storage), which holds only the encrypted files, the tester's number (for example P03), their size and the
+    time until the developer downloads them, then deletes them. On the developer's computer the data is kept on an
+    encrypted disk.</p>
+  <p><strong>Who and how long:</strong> only the developer reads it, as each tester agreed. It is never sold or shared,
+    never used for advertising, and not used for research studies or publications: only to improve Omnitrack.
+    Google Health data is used only to improve
+    Omnitrack's day labelling, as the Google Health API Developer and User Data Policy allows with the user's consent.
+    Everything a tester sent is deleted when the pilot ends, or earlier when they choose "Leave and delete my data"
+    on the Pilot page.</p>
+
+  <h2>Other services Omnitrack contacts</h2>
+  <p>Omnitrack contacts the services below. <strong>None of them receive your Google Health data</strong>, except
+    the pilot relay, encrypted, for testers who joined the pilot.</p>
   <table>
     <thead><tr><th>Service</th><th>When</th><th>What it receives</th></tr></thead>
     <tbody>
@@ -134,10 +205,14 @@
       <tr><td>OpenStreetMap map tiles</td>
         <td>When you point at a place on your day view to see it on a map</td>
         <td>Requests for map images around that place, which reveal its approximate location.</td></tr>
-      <tr><td>Google Fonts and unpkg.com</td>
-        <td>When you open a Health Sync page (fonts) or a map (unpkg)</td>
-        <td>Standard web requests for the page's font and map software, which include your IP address. No data from the
-          page is sent.</td></tr>
+      <tr><td>Google Fonts</td>
+        <td>When you open a Omnitrack page</td>
+        <td>A standard web request for the page's font, which includes your IP address. No data from the page is sent.
+          (The map software ships with Omnitrack and is not downloaded.)</td></tr>
+      <tr><td>Google Maps</td>
+        <td>Only when you click a place on your day view</td>
+        <td>Google Maps opens in your browser with that place's name or its coordinates, under Google's privacy
+          policy.</td></tr>
       <tr><td>Your calendar provider</td>
         <td>If you add a calendar link, a few times a day</td>
         <td>A request to download that calendar.</td></tr>
@@ -147,24 +222,58 @@
       <tr><td>Apple iCloud</td>
         <td>If you use voice memos</td>
         <td>Your recordings, through your own iCloud account and under Apple's privacy policy.</td></tr>
+      <tr><td>Tailscale</td>
+        <td>If you use phone location</td>
+        <td>Your phone sends its location to your own computer over your private, encrypted Tailscale network. Tailscale
+          coordinates the connection under its own privacy policy; Omnitrack does not send it any data.</td></tr>
+      <tr><td>This website and GitHub</td>
+        <td>Every few hours, to check for a new version, which then installs itself while you are not using
+          Omnitrack (you can turn this off in Settings); when you install or update Omnitrack</td>
+        <td>A request for the version file, and downloads of Omnitrack itself. Omnitrack identifies itself only by
+          its version number; no data from your computer is sent.</td></tr>
+      <tr><td>Astral (releases.astral.sh)</td>
+        <td>When you install or update Omnitrack</td>
+        <td>A download of Python itself, through Astral's uv installer. No data from your computer is sent.</td></tr>
+      <tr><td>The Python Package Index (pypi.org)</td>
+        <td>When you install or update Omnitrack, or turn on voice memos</td>
+        <td>Downloads of the libraries Omnitrack runs on (for voice memos with an NVIDIA graphics card, also NVIDIA's
+          libraries). No data from your computer is sent.</td></tr>
+      <tr><td>OpenAI (ChatGPT)</td>
+        <td>Only if you connect ChatGPT, when you sign in and each time you ask about a day</td>
+        <td>Your sign-in, your question and a summary of that day; health data only if you turned it on for Bloom or
+          Zen (see <a href="#chatgpt">asking ChatGPT about your day</a>).</td></tr>
+      <tr><td>Cloudflare (the pilot relay)</td>
+        <td>Only for invited testers who joined the pilot, when they send a report or data</td>
+        <td>Encrypted files that only the developer can open, the tester's number, and their size and time. This is
+          the only service that carries Google Health data, encrypted, and only for pilot testers who agreed.</td></tr>
+      <tr><td>ActivityWatch (GitHub)</td>
+        <td>On Windows, if you ask the setup page to install ActivityWatch for you</td>
+        <td>A request for the ActivityWatch installer. ActivityWatch itself runs on your computer and keeps its records
+          there.</td></tr>
     </tbody>
   </table>
   <p>Each of these services handles the requests it receives under its own privacy policy.</p>
 
   <h2>Your choices</h2>
   <ul>
-    <li><strong>Stop access:</strong> remove Health Sync at
+    <li><strong>Stop access:</strong> remove Omnitrack at
       <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. It can then no longer read
       your Google Health data.</li>
-    <li><strong>Delete your data:</strong> delete the Health Sync folder on your computer. Nothing is kept anywhere else.</li>
+    <li><strong>Delete your data:</strong> uninstall Omnitrack and choose to delete your data (this also removes the
+      sign-in token from Credential Manager or the Keychain), or delete the Omnitrack data folder yourself. Nothing is
+      kept anywhere else, except what a pilot tester sent (next point).</li>
+    <li><strong>Pilot:</strong> leave on the Pilot page at any time; "Leave and delete my data" deletes everything you
+      sent, on the relay and on the developer's computer.</li>
     <li><strong>Turn sources off:</strong> each optional source can be left out or switched off in the settings.</li>
+    <li><strong>ChatGPT:</strong> Disconnect in Settings (this also signs Omnitrack out at OpenAI), or remove Omnitrack
+      (Health Sync if you connected it before the rename) under Apps in ChatGPT's settings.</li>
   </ul>
 
   <h2>Children</h2>
-  <p>Health Sync is not intended for children under 13.</p>
+  <p>Omnitrack is not intended for children under 13.</p>
 
   <h2>Not medical advice</h2>
-  <p>Health Sync is not a medical device and does not give medical advice.</p>
+  <p>Omnitrack is not a medical device and does not give medical advice.</p>
 
   <h2>Changes to this policy</h2>
   <p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
@@ -174,7 +283,7 @@
     <a href="https://github.com/jel0624/health-sync/issues">github.com/jel0624/health-sync/issues</a>.</p>
 
   <footer>
-    Health Sync is an independent project. It is not made, endorsed or supported by Google or Fitbit.
+    Omnitrack is an independent project. It is not made, endorsed or supported by Google or Fitbit.
     &middot; <a href="index.html">Home</a>
   </footer>
 </div>
